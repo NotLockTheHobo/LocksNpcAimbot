@@ -4,70 +4,11 @@
 	Game: No big deal
 ]]
 
-local settings = {
-	["Aimbot"] = {
-		["enabled"] = true,
-		["jitter_fix"] = true,
-		["max_distance"] = 200,
-		["closes_to_crosshair"] = true,
-		["aimbot_offset"] = {
-			["x"] = 0,
-			["y"] = 0,
-		},
-
-		["show_fov"] = true, -- false > off | true > on
-		["fov_size"] = 220,
-		["fov_color"] = { 255, 255, 255 },
-
-		["smoothness"] = 1,
-		["sensitivity"] = 1,
-
-		["target_dot"] = true, -- false > off | true > on
-		["target_dot_size"] = 3,
-		["target_dot_color"] = { 255, 5 - 0, 50 }, -- 5 - 0 = 5 WHY IS THIS HERE ????
-	},
-
-	["Esp"] = {
-		["enabled"] = true, -- false > off | true > on
-
-		["tracer"] = true, -- false > off | true > on
-		["tracer_color"] = { 100, 100, 255 },
-		["tracer_offset"] = {
-			["y"] = -2,
-		},
-
-		["stick"] = true, -- false > off | true > on
-		["stick_color"] = { 255, 255, 255 },
-		["stick_offset"] = {
-			["y"] = -5,
-		},
-
-		["name"] = true,
-		["name_custom_text"] = "",
-		["name_color"] = { 255, 255, 255 },
-		["name_offset"] = {
-			["x"] = 20,
-			["y"] = -7,
-		},
-
-		["distance"] = true, -- false > off | true > on
-		["distance_behind_text"] = "m",
-		["distance_color"] = { 100, 100, 100 },
-		["distance_offset"] = {
-			["x"] = 20, 
-			["y"] = 5,
-		},
-
-		["head_dot"] = true, -- false > off | true > on
-		["head_dot_size"] = 1,
-		["head_dot_color"] = { 255, 255, 255 },
-	},
-
-	["Npc Path"] = { -- the path from game to the folder/model where the npc is located and you can make it select more then one model/folder
-		[1] = { "Workspace", "Playermodels" },
-	},
-	["In Npc Path"] = { "Head", "w_char_HeadMotor6D" }, -- the path from the npc model to the target part
-}
+if not settings then 
+    print("No settings found!")
+    
+    return
+end
 
 local REFRESH_RATE = 1/100
 
@@ -312,6 +253,7 @@ local function initialize()
         Drawing.clear()
         
         while currentTick == _G.e do
+            
 			local currentTime = time()
 			if currentTime - lastUpdate < REFRESH_RATE then continue end
 
@@ -319,7 +261,6 @@ local function initialize()
 
             run()
 
-            wait()
         end
     end)
 end
