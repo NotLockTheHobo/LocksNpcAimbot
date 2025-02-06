@@ -9,6 +9,12 @@
 
 
 ## Download
+<details>
+<summary> <b>Dx9ware</b> </summary>
+
+[Source code](https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/src/dx9ware.lua)
+
+</details>
 
 <details>
 <summary> <b>Severe</b> </summary>
@@ -83,13 +89,6 @@ local settings = {
 -- Main
 loadstring(game:HttpGet("https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/src/dx9ware.lua"))()
 ```
-</details>
-
-<details>
-<summary> <b>Dx9ware</b> </summary>
-
-[Source code](https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/src/dx9ware.lua)
-
 </details>
 
 ## Documentation
