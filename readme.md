@@ -3,6 +3,10 @@
     <h3>Lock's Npc Aimbot</h3>
 </div>
 
+Ever wanted to make item ESP quickly and easily?
+Well, you've found the right script for the job.
+This script only requires you to specify the path where Npcs/items are located and assign their root part.
+
 ### Status: [DISCONTINUED]
 > I've lost interest in this project. It may contain bugs or performance issues.
 
@@ -98,4 +102,42 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/NotLockTheHobo/LocksN
 </details>
 
 ## Documentation
-> Being made
+### Item ESP Implementation Guide
+
+**Locate Your Items** First, determine where your items are stored in the game:
+- Open DEX
+- Navigate through the game
+- Note down the full path to where items are located
+- Example: If items are in `Workspace > SpawnedItems`, your path would be `{ "Workspace", "SpawnedItems" }`
+
+**Identify the Root Part** Find the part of the item you want to track:
+- Look for the main part (usually named "Handle", "MainPart", or "Root")
+- This will be your `In Npc Path` setting
+
+**Insert the correct settings** Finishing touches
+- If your items are located at `Workspace > SpawnedItems`, add the path as: `{ "Workspace", "SpawnedItems" }`
+- If the part you want to track is named Handle, specify it as: `{ "Handle" }`
+```lua
+_G.settings {
+	-- ["Aimbot"] ... 
+
+	-- ["Esp"] ... 
+
+	["Npc Path"] = {
+		{ "Workspace", "SpawnedItems" },
+	},
+
+	["In Npc Path"] = { "Handle" },
+}
+
+```
+
+### Multiple Item Locations
+If your items are in different locations, you can specify multiple paths:
+```lua
+["Npc Path"] = {
+    { "Workspace", "SpawnedItems" },
+    { "Workspace", "Loot", "Rare" },
+    { "Workspace", "Loot", "Common" }
+},
+```
