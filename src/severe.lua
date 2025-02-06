@@ -66,7 +66,7 @@ if not _G.settings then
 		},
 
 		["Npc Path"] = { -- the path from game to the folder/model where the npc is located
-			[1] = { "Workspace", "characters" },
+			[1] = { "Workspace" },
 		},
 		["In Npc Path"] = { "head" }, -- the path from the npc model to the target part
 	}
@@ -153,7 +153,7 @@ local espFunctions = {
 				Text = settings.Esp.name_custom_text ~= "" and settings.Esp.name_custom_text or cachedData.name,
 				Color = settings.Esp.name_color,
 				Outline = true,
-				Center = true,
+				Center = false,
 				Font = 1,
 				Size = 10,
 				Visible = settings.Esp.name,
@@ -170,6 +170,106 @@ local espFunctions = {
 			local screenPos = cachedData.screenPos
 
 			drawing.Position = { screenPos.x + offset.x, screenPos.y + offset.y }
+			drawing.Visible = cachedData.onScreen
+		end,
+	},
+
+	headdot = {
+		init = function(cachedData)
+			return Draw("Circle", {
+				Color = settings.Esp.head_dot_color,
+				Radius = settings.Esp.head_dot_size,
+				Thickness = 1,
+				Visible = settings.Esp.head_dot,
+			})
+		end,
+
+		update = function(drawing, cachedData)
+			if not settings.Esp.head_dot then
+				drawing.Visible = false
+				return
+			end
+
+			local screenPos = cachedData.screenPos
+			drawing.Position = { screenPos.x, screenPos.y }
+			drawing.Radius = settings.Esp.head_dot_size / (cachedData.distance / 100)
+			drawing.Visible = cachedData.onScreen
+		end,
+	},
+
+	stick = {
+		init = function(cachedData)
+			return Draw("Line", {
+				Color = settings.Esp.stick_color,
+				Thickness = 1,
+				Visible = settings.Esp.stick,
+			})
+		end,
+
+		update = function(drawing, cachedData)
+			if not settings.Esp.stick then
+				drawing.Visible = false
+				return
+			end
+
+			local screenPos = cachedData.screenPos
+			local bottomScreenPos, bottomOnScreen = worldtoscreenpoint({
+				cachedData.position.x,
+				cachedData.position.y + settings.Esp.stick_offset.y,
+				cachedData.position.z,
+			})
+
+			drawing.To = { screenPos.x, screenPos.y }
+			drawing.From = { bottomScreenPos.x, bottomScreenPos.y }
+			drawing.Visible = cachedData.onScreen and bottomOnScreen
+		end,
+	},
+
+	tracer = {
+		init = function(cachedData)
+			return Draw("Line", {
+				Color = settings.Esp.tracer_color,
+				Thickness = 1,
+				Visible = settings.Esp.tracer,
+			})
+		end,
+
+		update = function(drawing, cachedData)
+			if not settings.Esp.tracer then
+				drawing.Visible = false
+				return
+			end
+
+			local screenPos = cachedData.screenPos
+			drawing.To = { screenPos.x, screenPos.y }
+			drawing.From = centerOfScreen
+			drawing.Visible = cachedData.onScreen
+		end,
+	},
+
+	distance = {
+		init = function(cachedData)
+			return Draw("Text", {
+				Text = cachedData.name .. settings.Esp.distance_behind_text,
+				Color = settings.Esp.distance_color,
+				Outline = true,
+				Center = false,
+				Font = 1,
+				Size = 10,
+				Visible = settings.Esp.distance,
+			})
+		end,
+
+		update = function(drawing, cachedData)
+			if not settings.Esp.distance then
+				drawing.Visible = false
+				return
+			end
+
+			local screenPos = cachedData.screenPos
+			local offset = settings.Esp.distance_offset
+			drawing.Position = { screenPos.x + offset.x, screenPos.y + offset.y }
+			drawing.Text = floor(cachedData.distance) .. settings.Esp.distance_behind_text
 			drawing.Visible = cachedData.onScreen
 		end,
 	},
