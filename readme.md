@@ -21,7 +21,7 @@
 The current settings are configured for ESP items (No Big Deal).
 
 ```lua
-local settings = {
+_G.settings = {
 	["Aimbot"] = {
 		["enabled"] = true,
 		["jitter_fix"] = true,
