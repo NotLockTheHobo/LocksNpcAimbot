@@ -3,6 +3,9 @@
     <h3>Lock's Npc Aimbot</h3>
 </div>
 
+### Status: [DISCONTINUED]
+> I've lost interest in this project. It may contain bugs or performance issues.
+
 ## Contents
 - [Download](#download)
 - [Documentation](#documentation)
