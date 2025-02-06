@@ -9,9 +9,15 @@
 
 
 ## Download
+<details>
+<summary> <b>Dx9ware (v1)</b> </summary>
+
+[Source code](https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/src/dx9ware.lua)
+
+</details>
 
 <details>
-<summary> <b>Severe</b> </summary>
+<summary> <b>Severe (v1.01)</b> </summary>
 The current settings are configured for ESP items (No Big Deal).
 
 ```lua
@@ -81,15 +87,8 @@ local settings = {
 }
 
 -- Main
-loadstring(game:HttpGet("https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/src/dx9ware.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/src/severe.lua"))()
 ```
-</details>
-
-<details>
-<summary> <b>Dx9ware</b> </summary>
-
-[Source code](https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/src/dx9ware.lua)
-
 </details>
 
 ## Documentation
