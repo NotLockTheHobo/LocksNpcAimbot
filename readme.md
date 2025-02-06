@@ -10,21 +10,23 @@
 
 ## Download
 <details>
-<summary> <b>Dx9ware (v1)</b> </summary>
+<summary> <b>Dx9ware [DISCONTINUED]</b> </summary>
 
 [Source code](https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/src/dx9ware.lua)
 
 </details>
 
 <details>
-<summary> <b>Severe (v1.02)</b> </summary>
+<summary> <b>Severe [DISCONTINUED] - Last updated 6 feb 2025</b> </summary>
 The current settings are configured for ESP items (No Big Deal).
 
 ```lua
 -- v1.02
+-- game: No Big Deal
+-- type: items esp
 _G.settings = {
 	["Aimbot"] = {
-		["enabled"] = true,
+		["enabled"] = false,
 		["jitter_fix"] = true,
 		["max_distance"] = 200,
 		["closes_to_crosshair"] = true,
@@ -33,7 +35,7 @@ _G.settings = {
 			["y"] = 0,
 		},
 
-		["show_fov"] = true, -- false > off | true > on
+		["show_fov"] = false, -- false > off | true > on
 		["fov_size"] = 220,
 		["fov_color"] = { 255, 255, 255 },
 
@@ -48,13 +50,13 @@ _G.settings = {
 	["Esp"] = {
 		["enabled"] = true, -- false > off | true > on
 
-		["tracer"] = true, -- false > off | true > on
+		["tracer"] = false, -- false > off | true > on
 		["tracer_color"] = { 100, 100, 255 },
 		["tracer_offset"] = {
 			["y"] = -2,
 		},
 
-		["stick"] = true, -- false > off | true > on
+		["stick"] = false, -- false > off | true > on
 		["stick_color"] = { 255, 255, 255 },
 		["stick_offset"] = {
 			["y"] = 2,
@@ -68,7 +70,7 @@ _G.settings = {
 			["y"] = -7,
 		},
 
-		["distance"] = true, -- false > off | true > on
+		["distance"] = false, -- false > off | true > on
 		["distance_behind_text"] = "m",
 		["distance_color"] = { 100, 100, 100 },
 		["distance_offset"] = {
