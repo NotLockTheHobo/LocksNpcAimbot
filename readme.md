@@ -17,10 +17,11 @@
 </details>
 
 <details>
-<summary> <b>Severe (v1.01)</b> </summary>
+<summary> <b>Severe (v1.02)</b> </summary>
 The current settings are configured for ESP items (No Big Deal).
 
 ```lua
+-- v1.02
 _G.settings = {
 	["Aimbot"] = {
 		["enabled"] = true,
