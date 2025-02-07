@@ -25,6 +25,7 @@ This script simplifies the process of adding ESP and aimbot functionality to any
 
 ## Table of Contents
 - [Downloads](#downloads)
+- [Games](#games)
 - [Documentation](#documentation)
   - [Item ESP Guide](#item-esp-guide)
   - [Multiple Locations](#multiple-locations)
@@ -108,6 +109,18 @@ _G.settings = {
 loadstring(game:HttpGet("https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/src/severe.lua"))()
 ```
 </details>
+
+---
+<br><br>
+
+## Games
+> Pre configured settings for different games.
+
+Severe
+[`Browse configs`](/games/severe/)
+
+Dx9
+~~`No configs`~~
 
 ---
 <br><br>
