@@ -21,12 +21,12 @@ if not _G.settings then
 			["fov_size"] = 220,
 			["fov_color"] = { 255, 255, 255 },
 
-			["smoothness"] = 2,
+			["smoothness"] = 1,
 			["sensitivity"] = 1,
 
 			["target_dot"] = true, -- false > off | true > on
-			["target_dot_size"] = 3,
-			["target_dot_color"] = { 255, 5 - 0, 50 },
+			["target_dot_size"] = 5,
+			["target_dot_color"] = { 255, 0, 0 },
 		},
 
 		["Esp"] = {
@@ -61,14 +61,14 @@ if not _G.settings then
 			},
 
 			["head_dot"] = true, -- false > off | true > on
-			["head_dot_size"] = 1,
+			["head_dot_size"] = 4,
 			["head_dot_color"] = { 255, 255, 255 },
 		},
 
 		["Npc Path"] = { -- the path from game to the folder/model where the npc is located
 			[1] = { "Workspace" },
 		},
-		["In Npc Path"] = { "head" }, -- the path from the npc model to the target part
+		["In Npc Path"] = { "Head" }, -- the path from the npc model to the target part
 	}
 end
 
@@ -94,6 +94,7 @@ local mousemoverel = mousemoverel
 local Workspace = findservice(Game, "Workspace")
 local Camera = findfirstchild(Workspace, "Camera")
 
+local debugCheck = _G.cust_func or false
 local screenDimensions = getscreendimensions()
 local centerOfScreen = { screenDimensions.x / 2, screenDimensions.y / 2 }
 
@@ -192,7 +193,7 @@ local espFunctions = {
 
 			local screenPos = cachedData.screenPos
 			drawing.Position = { screenPos.x, screenPos.y }
-			drawing.Radius = settings.Esp.head_dot_size / (cachedData.distance / 100)
+			drawing.Radius = settings.Esp.head_dot_size * 100 / cachedData.distance
 			drawing.Visible = cachedData.onScreen
 		end,
 	},
@@ -365,10 +366,6 @@ local function run()
 
 	for _, Parent in pairs(cachedPaths) do
 		for _, npc in pairs(getchildren(Parent)) do
-			if getname(npc) == "shibadot" then
-				continue
-			end
-
 			local cachedData = cachedNpcs[npc]
 
 			if not cachedData then
@@ -387,6 +384,10 @@ local function run()
 					onScreen = nil,
 					drawings = {},
 				}
+
+				if debugCheck and debugCheck(cachedData) then
+					continue
+				end
 
 				for funcName, func in pairs(espFunctions) do
 					cachedData.drawings[funcName] = func.init(cachedData)

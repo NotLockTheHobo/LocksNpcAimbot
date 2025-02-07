@@ -204,14 +204,10 @@ end
 
 if settings["Aimbot"]["enabled"] then
 	if closest.dis > 1.3 or not settings["Aimbot"]["jitter_fix"] then
-		v.FirstPersonAim(
-			{
-				closest.pos2.x + settings["Aimbot"]["aimbot_offset"]["x"],
-				closest.pos2.y + settings["Aimbot"]["aimbot_offset"]["y"],
-			},
-			settings["Aimbot"]["smoothness"],
-			settings["Aimbot"]["sensitivity"]
-		)
+		v.FirstPersonAim({
+			closest.pos2.x + settings["Aimbot"]["aimbot_offset"]["x"],
+			closest.pos2.y + settings["Aimbot"]["aimbot_offset"]["y"],
+		}, settings["Aimbot"]["smoothness"], settings["Aimbot"]["sensitivity"])
 	end
 	if settings["Aimbot"]["target_dot"] then
 		v.DrawCircle(
