@@ -31,10 +31,10 @@ This script simplifies the process of adding ESP and aimbot functionality to any
 > I don't have a subscription for dx9ware, and I'm not paying for a subscription, so it's pretty much discontinued.
 
 Severe
-[`Browse source`](https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/src/dx9ware.lua)
+[`Link`](https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/games/severe/sv_lna_baseplate.lua)
 
 Dx9ware *[DISCONTINUED]*
-[`Browse source`](https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/src/dx9ware.lua)
+[`Link`](https://raw.githubusercontent.com/NotLockTheHobo/LocksNpcAimbot/refs/heads/main/src/dx9ware.lua)
 
 
 ---
