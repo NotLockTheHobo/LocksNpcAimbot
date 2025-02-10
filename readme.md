@@ -18,8 +18,8 @@ This script simplifies the process of adding ESP and aimbot functionality to any
 <br><br>
 
 ## Table of Contents
-- [Downloads](#downloads)
-- [Games](#games)
+- [Templates](#templates)
+- [Games configs](#games)
 - [Documentation](#documentation)
   - [Item ESP Guide](#item-esp-guide)
   - [Multiple Locations](#multiple-locations)
@@ -27,7 +27,7 @@ This script simplifies the process of adding ESP and aimbot functionality to any
 ---
 <br><br>
 
-## Downloads
+## Templates
 > I don't have a subscription for dx9ware, and I'm not paying for a subscription, so it's pretty much discontinued.
 
 Severe
